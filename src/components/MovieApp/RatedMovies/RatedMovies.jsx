@@ -20,7 +20,7 @@ const RatedMovies = () => {
           <div className="info-message">
             Вы оценили <span className = 'bold'>{RatedMovieListLength} {movieStringForm}</span>
           </div> :
-          <div className="info-message">У вас пока нет оценок</div>
+          <div className="info-message">У Вас пока нет оценок</div>
       }
       {
         RatedMovieListLength ? <MovieList {...ratedMovieListProps} /> : null

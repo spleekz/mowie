@@ -1,12 +1,12 @@
 .movie-preview{
-  margin: 15px;
+  margin: 0.9375rem;
   position: relative;
-  top:0px;
+  top:0rem;
 }
 .preview-image {
-  width: 250px;
-  height: 375px;
-  border-radius: 5px;
+  width: 15.625rem;
+  height: 23.4375rem;
+  border-radius: 0.3125rem;
 }
 .movie-list{
   display: flex;
@@ -17,26 +17,26 @@
 .rating{
   font-family: 'Noto Sans KR', sans-serif;
   text-align: center;
-  width: 50px;
+  width: 3.125rem;
   position: absolute;
-  bottom: 0px;
-  border-radius: 5px
+  bottom: 0rem;
+  border-radius: 0.3125rem
 }
 .rating-count{
   display: flex;
   align-items: center;
   justify-content: center;
   color:#fff;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .star-icon{
-  width: 19px;
-  height:19px;
-  padding: 1.6px;
+  width: 1.1875rem;
+  height:1.1875rem;
+  padding: 0.1rem;
 }
 .info-message{
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   color:var(--secondary-color);
   text-align: center;
 }

@@ -11,10 +11,10 @@ const MovieApp = () => {
   return (
     <div className='movie-app'>
       <SearchForm />
-      <Route exact path='/' render = {() =><PopularMovieList />} />
-      <Route exact path='/movies/:searchedValue' component = {() => <SearchedMovieList />} />
-      <Route path='/movie/:movieId' component = {() => <Movie />} />
-      <Route path='/rated' component = {() => <RatedMovies />} />
+      <Route exact path='/' render={() => <PopularMovieList />} />
+      <Route exact path='/movies/:searchedValue' component={() => <SearchedMovieList />} />
+      <Route path='/movie/:movieId' component={() => <Movie />} />
+      <Route path='/rated' component={() => <RatedMovies />} />
     </div>
   );
 }
