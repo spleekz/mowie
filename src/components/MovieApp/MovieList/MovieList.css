@@ -1,0 +1,42 @@
+.movie-preview{
+  margin: 15px;
+  position: relative;
+  top:0px;
+}
+.preview-image {
+  width: 250px;
+  height: 375px;
+  border-radius: 5px;
+}
+.movie-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-width: 100%;
+}
+.rating{
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  width: 50px;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 5px
+}
+.rating-count{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  font-size: 20px;
+}
+.star-icon{
+  width: 19px;
+  height:19px;
+  padding: 1.6px;
+}
+.info-message{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  color:var(--secondary-color);
+  text-align: center;
+}

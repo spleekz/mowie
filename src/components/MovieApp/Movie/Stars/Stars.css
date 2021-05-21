@@ -1,0 +1,14 @@
+.stars-container{
+  display: flex;
+  justify-content: center;
+}
+.stars{
+  display: flex;
+  width:400px;
+  justify-content: space-around;
+  padding: 6px;
+}
+.star{
+  width:38px;
+  height:38px;
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { observer } from 'mobx-react-lite';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router';
 import './App.css';
+import Header from './components/Header/Header';
+import MovieApp from './components/MovieApp/MovieApp';
+import MovieListStore from './store/MovieListStore';
+import ThemeStore from './store/ThemeStore';
 
-function App() {
+const App = () => {
+  const history = useHistory();
+  useEffect(() => {
+    MovieListStore.setPopularMovieList();
+  }, [history]);
+  let theme;
+  ThemeStore.isDarkTheme ? theme = 'dark' : theme = 'light'
+  document.documentElement.setAttribute('data-theme',theme)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='app'>
+      <Header />
+      <MovieApp />
     </div>
   );
 }
 
-export default App;
+export default observer(App);

@@ -1,0 +1,51 @@
+.movie{
+  display: flex;
+  justify-content: center;
+  padding-top : 10px;
+  background-color: var(--primary-color);
+}
+.movie-poster{
+  width: 480px;
+  height: 730px;
+  border-radius: 14px;
+}
+.movie-description{
+  font-family: 'Fira Sans Condensed', sans-serif;
+  color:var(--secondary-color);
+  padding:0px 16px;
+  max-width: 37%;
+}
+.movie-name{
+  margin-bottom:8px;
+}
+.movie-title{
+  font-size: 29px;
+  font-weight: bold;
+}
+.original-title{
+  font-size: 18px;
+  margin-top: -6px;
+  color:var(--extra-color)
+}
+.genres{
+  display: flex;
+}
+.genres-list{
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.genre{
+  padding: 8px;
+  margin: 0 4px;
+  font-size: 17px;
+  background-color: var(--input-color);
+  border-radius: 5px;
+}
+.genre:first-child{
+  margin-left:0px;
+}
+.overview,.runtime,.release-date{
+  font-size: 22px;
+  margin-bottom:14px;
+}
