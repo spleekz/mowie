@@ -41,7 +41,8 @@ const Stars = () => {
     }
     CurrentMovieStore.setSelectedStars(CurrentMovieStore.user_vote)
     MovieListStore.setRatedMovies({
-      ...CurrentMovieStore,
+      id:CurrentMovieStore.id,
+      poster_path : CurrentMovieStore.poster_path,
       vote_average: star
     })
   }
