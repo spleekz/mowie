@@ -1,10 +1,11 @@
-import { makeAutoObservable } from "mobx";
+import { configure, makeAutoObservable } from "mobx";
 import { MovieApi } from "../API/MovieApi";
-
+configure({ enforceActions: 'never' })
 class CurrentMovieStore {
   constructor() {
     makeAutoObservable(this)
   }
+  stars = [];
   id = null;
   isFetching = false;
   title = null;
@@ -14,8 +15,7 @@ class CurrentMovieStore {
   genres = null;
   poster_path = null;
   original_title = null;
-  stars = []
-  user_vote = 0
+  user_vote = 0;
 
   setIsFetching = (value) => {
     this.isFetching = value

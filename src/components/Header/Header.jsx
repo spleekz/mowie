@@ -1,16 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 import ThemeStore from '../../store/ThemeStore';
-import 'antd/dist/antd.css';
+import { useHistory } from 'react-router';
 import './Header.css'
 
 const Header = () => {
   let themeIcon;
-  if(ThemeStore.isDarkTheme){
-    themeIcon = '🌜'
+  if (ThemeStore.isDarkTheme) {
+    themeIcon = '🌞'
   }
   else {
-    themeIcon = '🌞'
+    themeIcon = '🌜'
   }
   const history = useHistory();
   return (
@@ -26,7 +25,7 @@ const Header = () => {
           Мои оценки
       </div>
         <div className="theme-changer">
-          <div className="theme-icon" onClick = {ThemeStore.setTheme}>{themeIcon}</div>
+          <div className="theme-icon" onClick={ThemeStore.setTheme}>{themeIcon}</div>
         </div>
       </div>
     </div>

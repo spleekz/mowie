@@ -13,7 +13,6 @@ class MovieListStore {
   inputValue = '';
   searchedInputValue = '';
   isFetching = false
-  initialized = false
 
   setRatedMovies = (ratedMovie) => {
     const similarMovieIndex = this.ratedMovies.findIndex(movie => movie.id === ratedMovie.id)
@@ -30,6 +29,9 @@ class MovieListStore {
       this.ratedMovies.push(ratedMovie)
     }
   }
+  deleteRatedMovie = (movieId) => {
+    this.ratedMovies = this.ratedMovies.filter(movie => movie.id !== movieId)
+  }
   setIsFetching = (value) => {
     this.isFetching = value
   }
@@ -41,7 +43,6 @@ class MovieListStore {
   }
   setMovie = (movieList) => {
     this.movieList = movieList
-    this.initialized = true
   }
   setPopularMovie = (movieList) => {
     this.popularMovieList = movieList

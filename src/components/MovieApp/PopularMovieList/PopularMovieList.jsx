@@ -1,20 +1,20 @@
-import { observer } from 'mobx-react-lite';
 import React from 'react';
-import Preloader from '../../../assets/Components/Preloader/Preloader';
 import MovieListStore from '../../../store/MovieListStore';
 import MovieList from '../MovieList/MovieList';
+import Preloader from '../../../assets/Components/Preloader/Preloader';
+import { observer } from 'mobx-react-lite';
 
 const PopularMovieList = () => {
-  if(MovieListStore.isFetching){
+  if (MovieListStore.isFetching) {
     return <Preloader />
   }
   const popularMovieList = MovieListStore.popularMovieList.filter(movie => {
     return ((movie.overview) && (movie.poster_path) && (movie.vote_average))
   })
-  const count = 'count';
   const popularMovieListProps = {
     movieList: popularMovieList,
-    vote: count
+    vote: 'count',
+    name: 'popularMovieList'
   }
   return (
     <div>

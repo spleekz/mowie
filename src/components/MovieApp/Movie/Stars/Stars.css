@@ -9,6 +9,9 @@
   padding: 0.375rem;
 }
 .star{
-  width:2.375rem;
-  height:2.375rem;
+  width:39px;
+  height:39px;
+}
+.star:hover{
+  cursor: pointer;
 }

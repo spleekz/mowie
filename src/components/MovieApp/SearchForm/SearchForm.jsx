@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
+import MovieListStore from '../../../store/MovieListStore';
 import { observer } from 'mobx-react-lite';
 import { useHistory } from 'react-router';
-import { SearchOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
-import MovieListStore from '../../../store/MovieListStore';
-import './SearchForm.css'
+import './SearchForm.css';
+
 const SearchForm = () => {
   const [isInputLong, setIsInputLong] = useState(false)
   const history = useHistory();
   const onInputClick = () => {
-    MovieListStore.setSearchedInputValue(MovieListStore.inputValue) 
+    MovieListStore.setSearchedInputValue(MovieListStore.inputValue)
     if (MovieListStore.searchedInputValue) {
       history.push('/movies/' + MovieListStore.searchedInputValue)
     }
@@ -30,26 +29,30 @@ const SearchForm = () => {
   let inputStyle
   if (isInputLong) {
     inputStyle = {
-      width: '310px'
+      width: '19.6875rem'
     }
   }
   else {
     inputStyle = {
-      width: '175px'
+      width: '15.625rem'
     }
   }
 
   return (
     <div className="search-form-container">
-      <div className="search-form">
-        <div className="input-form" style={inputStyle}
-          onFocus={() => setIsInputLong(true)}
-          onBlur={() => setIsInputLong(false)}>
+      <div className="search-form"
+        tabIndex='1'
+        onFocus={() => setIsInputLong(true)}
+        onBlur={() => setIsInputLong(false)}>
+        <div className="input-form" style={inputStyle}>
           <input className='search-form-input'
+            placeholder='Введите название фильма'
             onChange={onInputChange}
             onKeyPress={enterHandler}
             value={MovieListStore.inputValue} />
-          <Button type="primary" shape="circle" icon={<SearchOutlined />} className='search-form-button' onClick={onInputClick} />
+          <div className="search-form-button" onClick={onInputClick}>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
     </div>

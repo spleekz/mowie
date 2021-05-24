@@ -1,12 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router';
-import Movie from './Movie/Movie';
 import RatedMovies from './RatedMovies/RatedMovies';
 import PopularMovieList from './PopularMovieList/PopularMovieList';
 import SearchedMovieList from './SearchedMovieList/SearchedMovieList';
 import SearchForm from './SearchForm/SearchForm'
-import './MovieApp.css'
+import Movie from './Movie/Movie';
 import { observer } from 'mobx-react-lite';
+import { Route } from 'react-router';
+import './MovieApp.css'
+
 const MovieApp = () => {
   return (
     <div className='movie-app'>

@@ -23,6 +23,8 @@
   display: flex;
 }
 .header-navbar-item{
+  display: flex;
+  align-items: center;
   font-size: 1.4375rem;
   padding:0.0625rem 1.25rem;
   margin: 0 0.5rem;

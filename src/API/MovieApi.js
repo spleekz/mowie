@@ -20,6 +20,3 @@ export const MovieApi = {
       })
   }
 }
-//https://api.themoviedb.org/3/search/movie?api_key=3556ce51d8ebbbd9f64a2b04a067e408&language=ru&query=она
-//https://image.tmdb.org/t/p/original/tJnV7AUgEMuTxUgZTm38k6NnZ0l.jpg
-//https://api.themoviedb.org/3/movie/1402?api_key=3556ce51d8ebbbd9f64a2b04a067e408&language=ru

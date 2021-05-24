@@ -12,6 +12,7 @@
   position: relative;
   top:0rem;
   transition: all 0.39s;
+  height: 2rem;
 }
 .search-form{
   display: flex;
@@ -23,23 +24,30 @@
   outline: none;
   border: none;
   border-radius: 1.125rem;
-  padding: 0.25rem 2.0625rem 0.25rem 0.6875rem;
+  padding:  0 2.0625rem  0 0.6875rem; 
   background-color: var(--input-color);
   color:var(--secondary-color)
+}
+.search-form-input::placeholder{
+  font-size: 0.9rem;
+  color:var(--placeholder-color)
 }
 .search-form-input:hover{
   cursor: pointer;
 }
 .search-form-button{
-  background-color:  var(--input-color);
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.125rem;
+  background-color:  var(--extra-color);
   position: absolute;
   right:0rem;
+  color:var(--primary-color)
 }
-.ant-btn{
-  box-shadow: none;
-}
-.ant-btn-primary{
-  color:var(--primary-color)!important;
-  border-color:var(--input-color)!important;
-  background: var(--extra-color)!important;
+.search-form-button:hover{
+  cursor: pointer;
 }

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
 import CurrentMovieStore from '../../../../store/CurrentMovieStore';
 import MovieListStore from '../../../../store/MovieListStore';
 import StarSrcCreator from '../../../../assets/Functions/StarSrcCreator'
+import { observer } from 'mobx-react-lite';
 import './Stars.css'
 
 const Stars = () => {
@@ -41,8 +41,8 @@ const Stars = () => {
     }
     CurrentMovieStore.setSelectedStars(CurrentMovieStore.user_vote)
     MovieListStore.setRatedMovies({
-      id:CurrentMovieStore.id,
-      poster_path : CurrentMovieStore.poster_path,
+      id: CurrentMovieStore.id,
+      poster_path: CurrentMovieStore.poster_path,
       vote_average: star
     })
   }
@@ -55,8 +55,8 @@ const Stars = () => {
             const starSrc = StarSrcCreator(star)
             return <img
               onClick={() => setRatedMovies(star.id)}
-              onMouseOver={() => { CurrentMovieStore.setHoveredStars(star.id) }}
-              onMouseLeave={() => { CurrentMovieStore.clearHoveredStars(CurrentMovieStore.stars.length) }}
+              onMouseOver={() => CurrentMovieStore.setHoveredStars(star.id)}
+              onMouseLeave={() => CurrentMovieStore.clearHoveredStars(CurrentMovieStore.stars.length)}
               key={star.id}
               className="star"
               src={starSrc}

@@ -1,12 +1,15 @@
 .movie-preview{
   margin: 0.9375rem;
   position: relative;
-  top:0rem;
+  top:0px;
 }
 .preview-image {
-  width: 15.625rem;
-  height: 23.4375rem;
-  border-radius: 0.3125rem;
+  width: 250px;
+  height: 375px;
+  border-radius: 5px;
+}
+.preview-image:hover{
+  cursor: pointer;
 }
 .movie-list{
   display: flex;
@@ -15,8 +18,10 @@
   min-width: 100%;
 }
 .rating{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Noto Sans KR', sans-serif;
-  text-align: center;
   width: 3.125rem;
   position: absolute;
   bottom: 0rem;
