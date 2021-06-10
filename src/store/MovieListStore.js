@@ -62,5 +62,16 @@ class MovieListStore {
       setTimeout(() => this.setIsFetching(false), 490)
     })
   }
+
+  get filteredMovieList() {
+    return this.movieList.filter(movie => {
+      return ((movie.overview) && (movie.poster_path) && (movie.vote_average))
+    })
+  }
+  get filteredPopularMovieList() {
+    return this.popularMovieList.filter(movie => {
+      return ((movie.overview) && (movie.poster_path) && (movie.vote_average))
+    })
+  }
 }
 export default new MovieListStore()

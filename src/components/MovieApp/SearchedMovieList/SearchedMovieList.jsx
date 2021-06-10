@@ -8,18 +8,15 @@ import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router';
 
 const SearchedMovieList = () => {
-  const searchedMovieList = MovieListStore.movieList.filter(movie => {
-    return ((movie.overview) && (movie.poster_path) && (movie.vote_average))
-  })
   const movieListProps = {
-    movieList: searchedMovieList,
+    movieList: MovieListStore.filteredMovieList,
     vote: 'count',
     name: 'searchedMovieList'
   }
 
   const params = useParams()
   const searchedValue = params.searchedValue
-  const movieStringForm = StringFormConverter(searchedMovieList.length)
+  const movieStringForm = StringFormConverter(MovieListStore.filteredMovieList.length)
 
   useEffect(() => {
     MovieListStore.setInputValue(searchedValue)
@@ -31,7 +28,7 @@ const SearchedMovieList = () => {
   }
 
   let searchStringForm
-  if ((searchedMovieList.length % 10 === 1) && ((searchedMovieList.length < 10) || (searchedMovieList.length > 20))) {
+  if ((MovieListStore.filteredMovieList.length % 10 === 1) && ((MovieListStore.filteredMovieList.length < 10) || (MovieListStore.filteredMovieList.length > 20))) {
     searchStringForm = 'найден'
   }
   else {
@@ -41,11 +38,11 @@ const SearchedMovieList = () => {
   return (
     <div className="searched-movie-list-main">
       {
-        searchedMovieList.length ?
+        MovieListStore.filteredMovieList.length ?
           <div className="searched-movie-list">
             <div className="info-message">
               По запросу <span className='bold'>{MovieListStore.searchedInputValue}</span> {searchStringForm} <span className='bold '>
-                {searchedMovieList.length}</span> {movieStringForm}
+                {MovieListStore.filteredMovieList.length}</span> {movieStringForm}
             </div>
             <MovieList {...movieListProps} />
           </div>

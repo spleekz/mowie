@@ -8,11 +8,8 @@ const PopularMovieList = () => {
   if (MovieListStore.isFetching) {
     return <Preloader />
   }
-  const popularMovieList = MovieListStore.popularMovieList.filter(movie => {
-    return ((movie.overview) && (movie.poster_path) && (movie.vote_average))
-  })
   const popularMovieListProps = {
-    movieList: popularMovieList,
+    movieList: MovieListStore.filteredPopularMovieList,
     vote: 'count',
     name: 'popularMovieList'
   }
