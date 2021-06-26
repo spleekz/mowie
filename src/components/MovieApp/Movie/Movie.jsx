@@ -20,7 +20,7 @@ const Movie = () => {
   useEffect(() => {
     CurrentMovieStore.setCurrentMovie(movieId)
     MovieListStore.setInputValue('')
-  }, [movieId])
+  }, [movieId,CurrentMovieStore,MovieListStore])
 
   if (CurrentMovieStore.isFetching) {
     return <Preloader />

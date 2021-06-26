@@ -34,7 +34,7 @@ const Stars = () => {
       CurrentMovieStore.setUserVote(0)
     }
     CurrentMovieStore.setSelectedStars(CurrentMovieStore.user_vote)
-  }, [])
+  }, [CurrentMovieStore, MovieListStore])
 
   const setRatedMovies = (star) => {
     if (CurrentMovieStore.user_vote === star) {
