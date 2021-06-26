@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable, runInAction } from 'mobx'
 import { makePersistable } from 'mobx-persist-store'
 import { MovieApi } from '../API/MovieApi'
 
@@ -43,23 +43,21 @@ export class MovieListStore {
   setSearchedInputValue = (value) => {
     this.searchedInputValue = value
   }
-  setMovie = (movieList) => {
-    this.movieList = movieList
-  }
-  setPopularMovie = (movieList) => {
-    this.popularMovieList = movieList
-  }
   setPopularMovieList = () => {
     this.setIsFetching(true)
     MovieApi.getPopularMovieList().then((data) => {
-      this.setPopularMovie(data.results)
+      runInAction(() => {
+        this.popularMovieList = data.results
+      })
       setTimeout(() => this.setIsFetching(false), 490)
     })
   }
   setMovieList = (name) => {
     this.setIsFetching(true)
     MovieApi.getMovieList(name).then((data) => {
-      this.setMovie(data.results)
+      runInAction(() => {
+        this.movieList = data.results
+      })
       this.setSearchedInputValue(name)
       setTimeout(() => this.setIsFetching(false), 490)
     })

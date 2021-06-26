@@ -1,4 +1,4 @@
-import { configure, makeAutoObservable } from 'mobx'
+import { configure, makeAutoObservable, runInAction } from 'mobx'
 import { MovieApi } from '../API/MovieApi'
 configure({ enforceActions: 'never' })
 export class CurrentMovieStore {
@@ -54,21 +54,20 @@ export class CurrentMovieStore {
   setUserVote = (value) => {
     this.user_vote = value
   }
-  setCurrentMovieOptions = (movie) => {
-    this.id = movie.id
-    this.title = movie.title
-    this.overview = movie.overview
-    this.release_date = movie.release_date
-    this.runtime = movie.runtime
-    this.vote = movie.vote
-    this.genres = movie.genres
-    this.poster_path = movie.poster_path
-    this.original_title = movie.original_title
-  }
   setCurrentMovie = (id) => {
     this.setIsFetching(true)
     MovieApi.getCurrentMovie(id).then((data) => {
-      this.setCurrentMovieOptions(data)
+      runInAction(() => {
+        this.id = data.id
+        this.title = data.title
+        this.overview = data.overview
+        this.release_date = data.release_date
+        this.runtime = data.runtime
+        this.vote = data.vote
+        this.genres = data.genres
+        this.poster_path = data.poster_path
+        this.original_title = data.original_title
+      })
       setTimeout(() => this.setIsFetching(false), 490)
     })
   }
