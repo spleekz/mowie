@@ -1,16 +1,16 @@
-import React from 'react';
-import ThemeStore from '../../../store/ThemeStore';
+import React from 'react'
 import blackPreloader from '../../images/black-preloader.svg'
 import whitePreloader from '../../images/white-preloader.svg'
-import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite'
 import './Preloader.css'
+import { useStore } from '../../../store/RootStore/RootStoreContext'
 
 const Preloader = () => {
-  let preloader;
+  const { ThemeStore } = useStore()
+  let preloader
   if (ThemeStore.isDarkTheme) {
     preloader = whitePreloader
-  }
-  else {
+  } else {
     preloader = blackPreloader
   }
 
@@ -18,7 +18,7 @@ const Preloader = () => {
     <div className='preloader-block'>
       <img src={preloader} alt='' className='preloader' />
     </div>
-  );
+  )
 }
 
-export default observer(Preloader);
+export default observer(Preloader)

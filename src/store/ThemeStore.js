@@ -1,14 +1,17 @@
-import { makeAutoObservable } from "mobx";
-import { makePersistable } from 'mobx-persist-store';
-class ThemeStore {
+import { makeAutoObservable } from 'mobx'
+import { makePersistable } from 'mobx-persist-store'
+export class ThemeStore {
   constructor() {
     makeAutoObservable(this)
-    makePersistable(this, { name: 'ThemeStore', properties: ['isDarkTheme'], storage: window.localStorage });
+    makePersistable(this, {
+      name: 'ThemeStore',
+      properties: ['isDarkTheme'],
+      storage: window.localStorage,
+    })
   }
-  isDarkTheme = false;
+  isDarkTheme = false
 
   setTheme = () => {
     this.isDarkTheme = !this.isDarkTheme
   }
 }
-export default new ThemeStore()

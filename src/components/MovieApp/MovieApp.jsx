@@ -1,11 +1,11 @@
-import React from 'react';
-import RatedMovies from './RatedMovies/RatedMovies';
-import PopularMovieList from './PopularMovieList/PopularMovieList';
-import SearchedMovieList from './SearchedMovieList/SearchedMovieList';
+import React from 'react'
+import RatedMovies from './RatedMovies/RatedMovies'
+import PopularMovieList from './PopularMovieList/PopularMovieList'
+import SearchedMovieList from './SearchedMovieList/SearchedMovieList'
 import SearchForm from './SearchForm/SearchForm'
-import Movie from './Movie/Movie';
-import { observer } from 'mobx-react-lite';
-import { Redirect, Route, Switch } from 'react-router';
+import Movie from './Movie/Movie'
+import { observer } from 'mobx-react-lite'
+import { Redirect, Route, Switch } from 'react-router'
 import './MovieApp.css'
 
 const MovieApp = () => {
@@ -20,7 +20,7 @@ const MovieApp = () => {
         <Redirect to={'/'} />
       </Switch>
     </div>
-  );
+  )
 }
 
-export default observer(MovieApp);
+export default observer(MovieApp)
