@@ -19,10 +19,7 @@ const Header = () => {
         <div className='all-movies-link link header-navbar-item' onClick={() => history.push('/')}>
           Все фильмы
         </div>
-        <div
-          className='rated-movies-link link header-navbar-item'
-          onClick={() => history.push('/rated')}
-        >
+        <div className='rated-movies-link link header-navbar-item' onClick={() => history.push('/rated')}>
           Мои оценки
         </div>
         <div className='theme-changer'>

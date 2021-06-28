@@ -40,12 +40,7 @@ const SearchForm = () => {
 
   return (
     <div className='search-form-container'>
-      <div
-        className='search-form'
-        tabIndex='1'
-        onFocus={() => setIsInputLong(true)}
-        onBlur={() => setIsInputLong(false)}
-      >
+      <div className='search-form' tabIndex='1' onFocus={() => setIsInputLong(true)} onBlur={() => setIsInputLong(false)}>
         <div className='input-form' style={inputStyle}>
           <input
             className='search-form-input'

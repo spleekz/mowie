@@ -7,8 +7,7 @@ const Error = () => {
   const { MovieListStore } = useStore()
   return (
     <div className='error info-message'>
-      По запросу <span className='searched-value bold'>{MovieListStore.searchedInputValue}</span>{' '}
-      ничего не найдено
+      По запросу <span className='searched-value bold'>{MovieListStore.searchedInputValue}</span> ничего не найдено
     </div>
   )
 }

@@ -43,10 +43,8 @@ const SearchedMovieList = () => {
       {MovieListStore.filteredMovieList.length ? (
         <div className='searched-movie-list'>
           <div className='info-message'>
-            По запросу <span className='bold'>{MovieListStore.searchedInputValue}</span>{' '}
-            {searchStringForm}{' '}
-            <span className='bold '>{MovieListStore.filteredMovieList.length}</span>{' '}
-            {movieStringForm}
+            По запросу <span className='bold'>{MovieListStore.searchedInputValue}</span> {searchStringForm}{' '}
+            <span className='bold '>{MovieListStore.filteredMovieList.length}</span> {movieStringForm}
           </div>
           <MovieList {...movieListProps} />
         </div>

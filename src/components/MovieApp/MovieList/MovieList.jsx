@@ -37,9 +37,7 @@ const MovieList = (props) => {
               <div className='rating' style={ratingStyle}>
                 <div className='rating-count'>
                   {movie.vote_average}
-                  {props.vote === 'stars' ? (
-                    <img className='star-icon' src={starIconSrc} alt=''></img>
-                  ) : null}
+                  {props.vote === 'stars' ? <img className='star-icon' src={starIconSrc} alt=''></img> : null}
                 </div>
               </div>
             </div>

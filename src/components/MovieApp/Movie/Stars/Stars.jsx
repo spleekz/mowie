@@ -7,9 +7,7 @@ import { useStore } from '../../../../store/RootStore/RootStoreContext'
 const Stars = () => {
   const { CurrentMovieStore, MovieListStore } = useStore()
   useEffect(() => {
-    const movieIndex = MovieListStore.ratedMovies.findIndex(
-      (movie) => movie.id === CurrentMovieStore.id
-    )
+    const movieIndex = MovieListStore.ratedMovies.findIndex((movie) => movie.id === CurrentMovieStore.id)
     if (!CurrentMovieStore.stars.length) {
       for (let i = 1; i <= 10; i++) {
         let starName
@@ -59,9 +57,7 @@ const Stars = () => {
             <img
               onClick={() => setRatedMovies(star.id)}
               onMouseOver={() => CurrentMovieStore.setHoveredStars(star.id)}
-              onMouseLeave={() =>
-                CurrentMovieStore.clearHoveredStars(CurrentMovieStore.stars.length)
-              }
+              onMouseLeave={() => CurrentMovieStore.clearHoveredStars(CurrentMovieStore.stars.length)}
               key={star.id}
               className='star'
               src={starSrc}
